@@ -1,0 +1,96 @@
+/* site-ui/header.css */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.appbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  z-index: 100;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.appbar-left .logo {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.appbar-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appbar-center input[type="search"] {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.appbar-right button {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 2.8rem;
+  left: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  min-width: 150px;
+}
+
+.menu-dropdown.hidden {
+  display: none;
+}
+
+.menu-dropdown li {
+  margin: 0.3rem 0;
+}
+
+.menu-dropdown a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .appbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .appbar-center {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* 本体コンテンツがヘッダーに隠れない余白確保 */
+body {
+  padding-top: 3.5rem; /* appbar の高さ分 */
+}
