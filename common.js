@@ -63,3 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 });
+async function loadMenuItems() {
+  try {
+    const res = await fetch('/menu.json');
+    const items = await res.json();
+    const menuList = document.getElementById('menu-list');
+    if (!menuList) return;
+
+    items.forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.textContent = item.label;
+      li.appendChild(a);
+      menuList.appendChild(li);
+    });
+  } catch (e) {
+    console.error('メニュー読み込み失敗:', e);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadMenuItems();
+
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  }
+});
