@@ -94,3 +94,35 @@ body {
 body {
   padding-top: 3.5rem; /* appbar の高さ分 */
 }
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 250px;
+  height: 100%;
+  background: #222;
+  transition: right 0.3s ease-in-out;
+  padding-top: 70px;
+  z-index: 1000;
+}
+.menu.open {
+  right: 0;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  border-bottom: 1px solid #444;
+}
+.menu a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+.menu a:hover {
+  background: #444;
+}
+
