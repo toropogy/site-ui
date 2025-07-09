@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 async function loadMenuItems() {
   try {
-    const res = await fetch('/menu.json');
+    const res = await fetch('/menu2.json');
     const items = await res.json();
     const menuList = document.getElementById('menu-list');
     if (!menuList) return;
