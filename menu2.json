@@ -1,0 +1,5 @@
+[
+  { "label": "ホーム", "url": "/" },
+  { "label": "ツール一覧", "url": "/tools" },
+  { "label": "お問い合わせ", "url": "/contact" }
+]
